@@ -330,11 +330,13 @@ function signData() {
 		(o.style.display = 'block'),
 		(a.innerHTML = ''),
 		(l.disabled = !0),
-		readFile(i.files[0]).then(({ data: n }) => _signData(n, e)).catch(e => {
-    ;(o.style.display = 'none'), (l.disabled = !1)
-    var n = e.message || e
-    console.error('Fail read data from file: ' + n)
-})
+		readFile(i.files[0])
+			.then(({ data: n }) => _signData(n, e))
+			.catch(e => {
+				;(o.style.display = 'none'), (l.disabled = !1)
+				var n = e.message || e
+				console.error('Fail read data from file: ' + n)
+			})
 	)
 }
 function _signData(e, n) {
@@ -458,62 +460,67 @@ function clean() {
 }
 window.onload = function () {
 	try {
-		;(document.getElementById('spinner').style.display = 'none'),
-			(document.getElementById('sign-button').disabled = !1),
-			document.getElementById('pkFile').addEventListener(
-				'click',
-				function () {
-					document.getElementById('pkFilePassword').value = ''
-				},
-				!1
-			),
-			document.getElementById('pkFile').addEventListener(
-				'change',
-				function () {
-					document.getElementById('pkFilePassword').value = ''
-				},
-				!1
-			),
-			document.getElementById('pkTypeFile').addEventListener(
-				'click',
-				function () {
-					clean(), setLibraryType(PK_FORM_TYPE_FILE)
-				},
-				!1
-			),
-			document.getElementById('pkTypeKeyMedia').addEventListener(
-				'click',
-				function () {
-					clean(), setLibraryType(PK_FORM_TYPE_KM)
-				},
-				!1
-			),
-			document.getElementById('pkTypeKSP').addEventListener(
-				'click',
-				function () {
-					clean(), setLibraryType(PK_FORM_TYPE_KSP)
-				},
-				!1
-			),
-			document.getElementById('pkKSPSelect').addEventListener(
-				'change',
-				function () {
-					var e = getSelectedKSP()
-					document.getElementById('pkKSPUserIdBlock').style.display =
-						null != e && e.confirmationURL ? 'none' : 'block'
-				},
-				!1
-			),
-						(document.getElementById('dataFile').style.display = e
-							? 'none'
-							: 'block')
-				},
-				!1
-			),
-			document
-				.getElementById('sign-button')
-				.addEventListener('click', signData, !1),
-			setLibraryType(PK_FORM_TYPE_FILE)
+		document.getElementById('spinner').style.display = 'none'
+		document.getElementById('sign-button').disabled = false
+
+		document.getElementById('pkFile').addEventListener(
+			'click',
+			function () {
+				document.getElementById('pkFilePassword').value = ''
+			},
+			false
+		)
+
+		document.getElementById('pkFile').addEventListener(
+			'change',
+			function () {
+				document.getElementById('pkFilePassword').value = ''
+			},
+			false
+		)
+
+		document.getElementById('pkTypeFile').addEventListener(
+			'click',
+			function () {
+				clean()
+				setLibraryType(PK_FORM_TYPE_FILE)
+			},
+			false
+		)
+
+		document.getElementById('pkTypeKeyMedia').addEventListener(
+			'click',
+			function () {
+				clean()
+				setLibraryType(PK_FORM_TYPE_KM)
+			},
+			false
+		)
+
+		document.getElementById('pkTypeKSP').addEventListener(
+			'click',
+			function () {
+				clean()
+				setLibraryType(PK_FORM_TYPE_KSP)
+			},
+			false
+		)
+
+		document.getElementById('pkKSPSelect').addEventListener(
+			'change',
+			function () {
+				var e = getSelectedKSP()
+				document.getElementById('pkKSPUserIdBlock').style.display =
+					e != null && e.confirmationURL ? 'none' : 'block'
+			},
+			false
+		)
+
+		document
+			.getElementById('sign-button')
+			.addEventListener('click', signData, false)
+
+		setLibraryType(PK_FORM_TYPE_FILE)
 	} catch (e) {
 		console.error(e)
 	}
