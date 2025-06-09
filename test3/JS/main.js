@@ -353,27 +353,21 @@ function signData() {
 					.finally(() => {}))
 	)
 }
-function _signData(e, n) {
-	var t = document.getElementById('sign-textarea'),
-		i = document.getElementById('sign-button'),
-		a = document.getElementById('spinner')
+function _signData(fileBytes, includeOriginal) {
+	var signButton = document.getElementById('sign-button'),
+		spinner = document.getElementById('spinner'),
+		signTextarea = document.getElementById('sign-textarea')
 
 	readPrivateKey()
 		.then(function (keyInfo) {
-			keyInfo &&
-				console.log('EndUser: private key readed ' + keyInfo.subjCN + '.')
-			console.log('readPrivateKey RESULT:', keyInfo)
+			console.log('EndUser: ключ зчитано:', keyInfo.subjCN)
 
-			return euSign.GetOwnCertificates().then(e => {
-				let certData
-				const matchedCert = e?.find(
+			return euSign.GetOwnCertificates().then(certificates => {
+				const cert = certificates.find(
 					cert => cert?.infoEx?.serial === keyInfo.serial
 				)
-				certData = matchedCert
-					? {
-							infoEx: matchedCert.infoEx,
-							data: arrayBufferToBase64(matchedCert.data),
-					  }
+				const certData = cert
+					? { infoEx: cert.infoEx, data: arrayBufferToBase64(cert.data) }
 					: keyInfo
 
 				pkDetails.innerHTML = JSON.stringify(certData, null, 4).replaceAll(
@@ -382,40 +376,38 @@ function _signData(e, n) {
 				)
 
 				if (formType === PK_FORM_TYPE_KSP) {
-					document.getElementById('pkKSPQRImageLabel').innerHTML =
+					document.getElementById('pkKSPQRImageLabel').innerText =
 						'Відскануйте QR-код для підпису в моб. додатку:'
 				}
 
-				// ⛔ Підпис тексту повністю прибрано, залишено лише файл
-				return euSign.SignDataEx(1, e, true, true, n)
+				// Підписуємо лише файл
+				return euSign.SignDataEx(1, fileBytes, true, true, includeOriginal)
 			})
 		})
 		.then(function (signedData) {
-			console.log('EndUser: data signed')
-			console.log('Data: ' + e)
-			console.log('Sign: ' + signedData)
-
-			t.value = signedData // 👈 виводимо в textarea лише підпис
+			console.log('Дані підписано успішно')
+			signTextarea.value = signedData
 
 			if (formType === PK_FORM_TYPE_KSP) {
 				document.getElementById('pkKSPQRBlock').style.display = 'none'
 			}
 
-			a.style.display = 'none'
-			i.disabled = false
-			console.log('Дані успішно підписані')
+			spinner.style.display = 'none'
+			signButton.disabled = false
 			isDocumentSignedSuccess = true
+
 			saveSignData(signedData)
 		})
 		.catch(function (error) {
 			if (formType === PK_FORM_TYPE_KSP) {
 				document.getElementById('pkKSPQRBlock').style.display = 'none'
 			}
-			a.style.display = 'none'
-			i.disabled = false
+
+			spinner.style.display = 'none'
+			signButton.disabled = false
 
 			const msg = error.message || error
-			console.log('Sign data error: ' + msg)
+			console.error('Помилка підпису:', msg)
 			signError = msg
 			sendErrorMsg()
 			isDocumentSignedSuccess = false
