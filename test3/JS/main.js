@@ -6,7 +6,7 @@ const PK_FORM_TYPE_FILE = 1,
 var euSettings = {
 	language: 'uk',
 	encoding: 'utf-8',
-	httpProxyServiceURL: 'https://sign-server-bnx8.onrender.com',
+	httpProxyServiceURL: 'https://sign-wiget-node-js-server.onrender.com',
 	directAccess: !0,
 	CAs: './Data/CAs.json',
 	CACertificates: './Data/CACertificates.p7b',
@@ -87,7 +87,6 @@ function setLibraryType(e) {
 		t = document.getElementById('pkKeyMediaBlock'),
 		i = document.getElementById('pkKSPBlock'),
 		a = document.getElementById('signBlock'),
-		l = document.getElementById('dataText'),
 		o = document.getElementById('dataFile')
 	switch (
 		((l.style.display = 'block'),
@@ -323,8 +322,6 @@ async function protectData() {
 }
 function signData() {
 	var e = document.getElementById('envelopedOrigin').checked,
-		n = 'text' === document.getElementById('selectWhatToSign').value,
-		t = document.getElementById('dataText'),
 		i = document.getElementById('dataFile'),
 		a = document.getElementById('pkDetails'),
 		l = document.getElementById('sign-button'),
@@ -333,21 +330,11 @@ function signData() {
 		(o.style.display = 'block'),
 		(a.innerHTML = ''),
 		(l.disabled = !0),
-		n
-			? _signData(t.value, e)
-			: (console.log(i),
-			  console.log(i.files[0]),
-			  readFile(i.files[0])
-					.then(({ data: n }) => _signData(n, e))
-					.catch(e => {
-						;(o.style.display = 'none'), (l.disabled = !1)
-						var n = e.message || e
-						console.error('Fail read data from file: ' + n)
-						// alert(
-						// 	'Виникла помилка отримання даних з файлу. Опис помилки: ' + n
-						// )
-					})
-					.finally(() => {}))
+		readFile(i.files[0]).then(({ data: n }) => _signData(n, e)).catch(e => {
+    ;(o.style.display = 'none'), (l.disabled = !1)
+    var n = e.message || e
+    console.error('Fail read data from file: ' + n)
+})
 	)
 }
 function _signData(e, n) {
@@ -377,20 +364,14 @@ function _signData(e, n) {
 				formType == PK_FORM_TYPE_KSP &&
 					(document.getElementById('pkKSPQRImageLabel').innerHTML =
 						'Відскануйте QR-код для підпису в моб. додатку:'),
-				n
-					? t.value
-						? euSign.AppendSign(1, e, t.value, !0, !0)
-						: euSign.SignDataInternal(!0, e, !0)
-					: t.value
-					? euSign.AppendSign(1, e, t.value, !0, !0)
-					: euSign.SignDataEx(1, e, !0, !0, !0)
+				euSign.SignDataEx(1, e, !0, !0, !0)
 			)
 		})
 		.then(function (n) {
 			console.log('EndUser: data signed'),
 				console.log('Data: ' + e),
 				console.log('Sign: ' + n),
-				(t.value = n),
+				// textarea update removed
 				formType == PK_FORM_TYPE_KSP &&
 					(document.getElementById('pkKSPQRBlock').style.display = 'none'),
 				(a.style.display = 'none'),
@@ -523,13 +504,6 @@ window.onload = function () {
 				},
 				!1
 			),
-			document.getElementById('selectWhatToSign').addEventListener(
-				'change',
-				function () {
-					var e = 'text' === document.getElementById('selectWhatToSign').value
-					;(document.getElementById('dataText').style.display = e
-						? 'block'
-						: 'none'),
 						(document.getElementById('dataFile').style.display = e
 							? 'none'
 							: 'block')
