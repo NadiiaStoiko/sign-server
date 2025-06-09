@@ -123,18 +123,12 @@
 			</div>
 			<br />
 			<div id="signBlock" style="display: block">
-				<label for="selectWhatToSign">Оберіть файл для підпису:</label>
+				<label for="taFile">Оберіть файл для підпису:</label>
 				<!-- <select id="selectWhatToSign">
 					<option selected="" value="text">Текст</option>
 					<option value="file">Файл</option>
 				</select>
 				<br /> -->
-
-				<label for="envelopedOrigin">
-					Додавати оригінал у підписану сигнатуру:
-					<input id="envelopedOrigin" type="checkbox" checked="" />
-				</label>
-				<br />
 
 				<!-- <textarea
 					id="dataText"
@@ -143,7 +137,13 @@
 тестовий текст для підпису</textarea
 				> -->
 				<!-- <input id="dataFile" type="file" style="display: none" /> -->
-				<input id="dataFile" type="file" />
+				<input id="dataFile" type="file" style="display: block" />
+
+				<label for="envelopedOrigin">
+					Додавати оригінал у підписану сигнатуру:
+					<input id="envelopedOrigin" type="checkbox" checked="" />
+				</label>
+				<br />
 
 				<br /><br />
 				<button id="sign-button">Накласти підпис</button>
