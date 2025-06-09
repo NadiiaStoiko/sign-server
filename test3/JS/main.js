@@ -6,7 +6,7 @@ const PK_FORM_TYPE_FILE = 1,
 var euSettings = {
 	language: 'uk',
 	encoding: 'utf-8',
-	httpProxyServiceURL: 'https://sign-wiget-node-js-server.onrender.com',
+	httpProxyServiceURL: 'https://sign-server-bnx8.onrender.com',
 	directAccess: !0,
 	CAs: './Data/CAs.json',
 	CACertificates: './Data/CACertificates.p7b',
@@ -40,6 +40,13 @@ function signData() {
 	spinner.style.display = 'block'
 	signButton.disabled = true
 
+	if (!fileInput.files[0]) {
+		console.error('Файл не вибрано')
+		spinner.style.display = 'none'
+		signButton.disabled = false
+		return
+	}
+
 	readFile(fileInput.files[0])
 		.then(({ data }) => _signData(data, enveloped))
 		.catch(err => {
@@ -64,10 +71,11 @@ function _signData(fileBytes, includeOriginal) {
 					? { infoEx: cert.infoEx, data: arrayBufferToBase64(cert.data) }
 					: keyInfo
 
-				pkDetails.innerHTML = JSON.stringify(certData, null, 4).replaceAll(
-					'\n',
-					'<br>'
-				)
+				document.getElementById('pkDetails').innerHTML = JSON.stringify(
+					certData,
+					null,
+					4
+				).replaceAll('\n', '<br>')
 
 				if (formType === PK_FORM_TYPE_KSP) {
 					document.getElementById('pkKSPQRImageLabel').innerText =
