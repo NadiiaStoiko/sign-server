@@ -87,17 +87,18 @@ function setLibraryType(e) {
 		t = document.getElementById('pkKeyMediaBlock'),
 		i = document.getElementById('pkKSPBlock'),
 		a = document.getElementById('signBlock'),
-		l = null,
 		o = document.getElementById('dataFile')
 	switch (
-		((l.style.display = 'block'),
-		(o.style.display = 'none'),
-		(n.style.display = 'none'),
-		(t.style.display = 'none'),
-		(i.style.display = 'none'),
-		(a.style.display = 'none'),
-		(formType = e),
-		e)
+		(o.style.display = 'block'(
+			(l.style.display = 'block'),
+			(o.style.display = 'none'),
+			(n.style.display = 'none'),
+			(t.style.display = 'none'),
+			(i.style.display = 'none'),
+			(a.style.display = 'none'),
+			(formType = e),
+			e
+		))
 	) {
 		case PK_FORM_TYPE_FILE:
 			;(n.style.display = 'block'), (euSign = euSignFile)
