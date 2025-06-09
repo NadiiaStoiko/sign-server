@@ -87,7 +87,8 @@ function setLibraryType(e) {
 		t = document.getElementById('pkKeyMediaBlock'),
 		i = document.getElementById('pkKSPBlock'),
 		a = document.getElementById('signBlock'),
-		l = document.getElementById('dataText'),
+		// l = document.getElementById('dataText'),
+		l = '',
 		o = document.getElementById('dataFile')
 	switch (
 		((l.style.display = 'block'),
@@ -118,9 +119,9 @@ function setLibraryType(e) {
 		.catch(function (e) {
 			var n = e.message || e
 			console.log('Initialize error: ' + n)
-			// alert(
-			// 	'Виникла помилка при ініціалізації бібліотеки. Опис помилки: ' + n
-			// )
+			console.log(
+				'Виникла помилка при ініціалізації бібліотеки. Опис помилки: ' + n
+			)
 		})
 }
 function initialize() {
@@ -323,8 +324,10 @@ async function protectData() {
 }
 function signData() {
 	var e = document.getElementById('envelopedOrigin').checked,
-		n = 'text' === document.getElementById('selectWhatToSign').value,
-		t = document.getElementById('dataText'),
+		// n = 'text' === document.getElementById('selectWhatToSign').value,
+		n = 'file',
+		// t = document.getElementById('dataText'),
+		t = '',
 		i = document.getElementById('dataFile'),
 		a = document.getElementById('pkDetails'),
 		l = document.getElementById('sign-button'),
@@ -343,9 +346,9 @@ function signData() {
 						;(o.style.display = 'none'), (l.disabled = !1)
 						var n = e.message || e
 						console.error('Fail read data from file: ' + n)
-						// alert(
-						// 	'Виникла помилка отримання даних з файлу. Опис помилки: ' + n
-						// )
+						console.log(
+							'Виникла помилка отримання даних з файлу. Опис помилки: ' + n
+						)
 					})
 					.finally(() => {}))
 	)
@@ -406,8 +409,9 @@ function _signData(e, n) {
 				(i.disabled = !1)
 			var n = e.message || e
 			console.log('Sign data error: ' + n),
-				// alert('Виникла помилка при підписі даних. Опис помилки: ' + n)
-				(signError = n)
+				console.log('Виникла помилка при підписі даних. Опис помилки: ' + n)(
+					(signError = n)
+				)
 			sendErrorMsg()
 			isDocumentSignedSuccess = false
 		})
@@ -523,19 +527,19 @@ window.onload = function () {
 				},
 				!1
 			),
-			document.getElementById('selectWhatToSign').addEventListener(
-				'change',
-				function () {
-					var e = 'text' === document.getElementById('selectWhatToSign').value
-					;(document.getElementById('dataText').style.display = e
-						? 'block'
-						: 'none'),
-						(document.getElementById('dataFile').style.display = e
-							? 'none'
-							: 'block')
-				},
-				!1
-			),
+			// document.getElementById('selectWhatToSign').addEventListener(
+			// 	'change',
+			// 	function () {
+			// 		var e = 'text' === document.getElementById('selectWhatToSign').value
+			// 		;(document.getElementById('dataText').style.display = e
+			// 			? 'block'
+			// 			: 'none'),
+			// 			(document.getElementById('dataFile').style.display = e
+			// 				? 'none'
+			// 				: 'block')
+			// 	},
+			// 	!1
+			// ),
 			document
 				.getElementById('sign-button')
 				.addEventListener('click', signData, !1),
