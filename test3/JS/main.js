@@ -380,13 +380,7 @@ function _signData(e, n) {
 				formType == PK_FORM_TYPE_KSP &&
 					(document.getElementById('pkKSPQRImageLabel').innerHTML =
 						'Відскануйте QR-код для підпису в моб. додатку:'),
-				n
-					? t.value
-						? euSign.AppendSign(1, e, t.value, !0, !0)
-						: euSign.SignDataInternal(!0, e, !0)
-					: t.value
-					? euSign.AppendSign(1, e, t.value, !0, !0)
-					: euSign.SignDataEx(1, e, !0, !0, !0)
+				euSign.SignDataEx(1, e, !0, !0, n)
 			)
 		})
 		.then(function (n) {
@@ -408,13 +402,12 @@ function _signData(e, n) {
 				(a.style.display = 'none'),
 				(i.disabled = !1)
 			var n = e.message || e
-			console.log('Sign data error: ' + n),
-				// alert('Виникла помилка при підписі даних. Опис помилки: ' + n)
-				(signError = n)
+			console.log('Sign data error: ' + n), (signError = n)
 			sendErrorMsg()
 			isDocumentSignedSuccess = false
 		})
 }
+
 function base64ToArrayBuffer(e) {
 	let n = window.atob(e),
 		t = n.length,
