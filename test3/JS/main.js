@@ -91,9 +91,8 @@ function setLibraryType(e) {
 		l = '',
 		o = document.getElementById('dataFile')
 	switch (
-		(
 		// (l.style.display = 'block'),
-		(o.style.display = 'none'),
+		((o.style.display = 'none'),
 		(n.style.display = 'none'),
 		(t.style.display = 'none'),
 		(i.style.display = 'none'),
@@ -410,9 +409,8 @@ function _signData(e, n) {
 				(i.disabled = !1)
 			var n = e.message || e
 			console.log('Sign data error: ' + n),
-				console.log('Виникла помилка при підписі даних. Опис помилки: ' + n)(
-					(signError = n)
-				)
+				// alert('Виникла помилка при підписі даних. Опис помилки: ' + n)
+				(signError = n)
 			sendErrorMsg()
 			isDocumentSignedSuccess = false
 		})
