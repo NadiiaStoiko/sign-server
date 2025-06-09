@@ -354,9 +354,8 @@ function signData() {
 	)
 }
 function _signData(fileBytes, includeOriginal) {
-	var signButton = document.getElementById('sign-button'),
-		spinner = document.getElementById('spinner'),
-		signTextarea = document.getElementById('sign-textarea')
+	var signButton = document.getElementById('sign-button')
+	var spinner = document.getElementById('spinner')
 
 	readPrivateKey()
 		.then(function (keyInfo) {
@@ -380,13 +379,13 @@ function _signData(fileBytes, includeOriginal) {
 						'Відскануйте QR-код для підпису в моб. додатку:'
 				}
 
-				// Підписуємо лише файл
+				// Підпис лише файлу
 				return euSign.SignDataEx(1, fileBytes, true, true, includeOriginal)
 			})
 		})
 		.then(function (signedData) {
-			console.log('Дані підписано успішно')
-			signTextarea.value = signedData
+			console.log('✅ Дані успішно підписані')
+			document.getElementById('sign-textarea').value = signedData
 
 			if (formType === PK_FORM_TYPE_KSP) {
 				document.getElementById('pkKSPQRBlock').style.display = 'none'
@@ -407,12 +406,14 @@ function _signData(fileBytes, includeOriginal) {
 			signButton.disabled = false
 
 			const msg = error.message || error
-			console.error('Помилка підпису:', msg)
+			console.error('❌ Помилка підпису:', msg)
 			signError = msg
 			sendErrorMsg()
 			isDocumentSignedSuccess = false
 		})
 }
+
+
 
 function base64ToArrayBuffer(e) {
 	let n = window.atob(e),
