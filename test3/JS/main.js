@@ -91,7 +91,8 @@ function setLibraryType(e) {
 		l = '',
 		o = document.getElementById('dataFile')
 	switch (
-		((l.style.display = 'block'),
+		(
+		// (l.style.display = 'block'),
 		(o.style.display = 'none'),
 		(n.style.display = 'none'),
 		(t.style.display = 'none'),
