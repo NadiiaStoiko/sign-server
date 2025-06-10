@@ -174,10 +174,14 @@
 				</div>
 
 				<input id="dataFile" type="file" style="display: none" />
-				<label for="selectWhatToSign">Текст для підпису:</label>
+				<label for="selectWhatToSign">Тип підпису:</label>
 				<select id="envelopedOrigin">
-					<option selected="" value="onlySign">Дані та підпис окремими файлами (формат CAdES)</option>
-					<option value="signedFile">Дані та підпис в одному файлі (формат CAdES)</option>
+					<option selected="" value="onlySign">
+						Дані та підпис окремими файлами (формат CAdES)
+					</option>
+					<option value="signedFile">
+						Дані та підпис в одному файлі (формат CAdES)
+					</option>
 				</select>
 				<br />
 				<!-- <label for="envelopedOrigin">
@@ -203,24 +207,26 @@
 				</div>
 
 				<br /><br />
-				<label>Підписані дані:</label>
-				<br /><br />
-				<textarea
-					id="sign-textarea"
-					style="width: 350px; height: 100px; overflow: scroll"
-				></textarea>
-				<br /><br />
-				<label>Публічний сертифікат ключа:</label>
-				<div
-					id="pkDetails"
-					style="
-						min-height: 50px;
-						overflow: auto;
-						width: 100%;
-						border: 1px solid;
-					"
-				></div>
-				<br /><br />
+				<div style="display: none">
+					<label>Підписані дані:</label>
+					<br /><br />
+					<textarea
+						id="sign-textarea"
+						style="width: 350px; height: 100px; overflow: scroll"
+					></textarea>
+					<br /><br />
+					<label>Публічний сертифікат ключа:</label>
+					<div
+						id="pkDetails"
+						style="
+							min-height: 50px;
+							overflow: auto;
+							width: 100%;
+							border: 1px solid;
+						"
+					></div>
+					<br /><br />
+				</div>
 			</div>
 		</div>
 	</body>
