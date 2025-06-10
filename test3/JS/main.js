@@ -525,6 +525,18 @@ window.onload = function () {
 				},
 				!1
 			),
+			document
+				.getElementById('dataFile')
+				.addEventListener('change', function () {
+					const fileName = this.files[0]
+						? this.files[0].name
+						: 'Файл не вибрано'
+					document.getElementById('file-name').textContent = fileName
+				}),
+			document.getElementById('pkFile').addEventListener('change', function () {
+				const fileName = this.files[0] ? this.files[0].name : 'Файл не вибрано'
+				document.getElementById('file-name').textContent = fileName
+			}),
 			// document.getElementById('selectWhatToSign').addEventListener(
 			// 	'change',
 			// 	function () {
