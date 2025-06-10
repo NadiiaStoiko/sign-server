@@ -13,7 +13,7 @@ var euSettings = {
 	allowedKeyMediaTypes: [],
 	KSPs: [],
 }
-// console.log(euSettings)
+console.log('CAs', euSettings.CAs)
 var euSignFile = new EndUser(null, EndUserConstants.EndUserLibraryType.JS),
 	euSignKeyMedia = new EndUser(null, EndUserConstants.EndUserLibraryType.SW),
 	keyMedias = [],
