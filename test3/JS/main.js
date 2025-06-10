@@ -322,15 +322,16 @@ async function protectData() {
 	}
 }
 function signData() {
-	var e = document.getElementById('envelopedOrigin').checked,
-		// n = 'text' === document.getElementById('selectWhatToSign').value,
-		n = 'text' === 'file',
-		t = '',
+	var e = 'signedFile' === document.getElementById('envelopedOrigin').value
+	// var e = document.getElementById('envelopedOrigin').checked,
+	// n = 'text' === document.getElementById('selectWhatToSign').value,
+	;(n = 'text' === 'file'),
+		(t = ''),
 		// t = document.getElementById('dataText'),
-		i = document.getElementById('dataFile'),
-		a = document.getElementById('pkDetails'),
-		l = document.getElementById('sign-button'),
-		o = document.getElementById('spinner')
+		(i = document.getElementById('dataFile')),
+		(a = document.getElementById('pkDetails')),
+		(l = document.getElementById('sign-button')),
+		(o = document.getElementById('spinner'))
 	return (
 		(o.style.display = 'block'),
 		(a.innerHTML = ''),
