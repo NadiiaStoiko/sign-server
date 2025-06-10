@@ -531,7 +531,7 @@ window.onload = function () {
 					const fileName = this.files[0]
 						? this.files[0].name
 						: 'Файл не вибрано'
-					document.getElementById('file-name').textContent = fileName
+					document.getElementById('dataFile-file-name').textContent = fileName
 				}),
 			document.getElementById('pkFile').addEventListener('change', function () {
 				const fileName = this.files[0] ? this.files[0].name : 'Файл не вибрано'
