@@ -76,10 +76,24 @@
 			<br />
 			<div id="pkFileBlock" style="display: block">
 				<label>Файл з особистим ключем:</label>
+				<label
+					for="pkFile"
+					style="
+						display: inline-block;
+						padding: 6px 12px;
+						cursor: pointer;
+						background-color: #007bff;
+						color: white;
+						border-radius: 4px;
+						font-family: sans-serif;
+					"
+				>
+					Оберіть файл
+				</label>
 				<input
 					id="pkFile"
 					type="file"
-					style="margin-left: 15px; margin-bottom: 15px"
+					style="margin-left: 15px; margin-bottom: 15px; display: none"
 				/>
 				<label for="pkFilePassword">Пароль:</label>
 				<br /><br />
