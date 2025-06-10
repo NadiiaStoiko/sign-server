@@ -76,23 +76,26 @@
 			<br />
 			<div id="pkFileBlock" style="display: flex; flex-direction: column">
 				<label>Файл з особистим ключем:</label>
-				<label
-					for="pkFile"
-					style="
-						display: flex;
-						width: 120px;
-						padding: 5px 12px;
-						cursor: pointer;
-						background-color: #007bff;
-						color: white;
-						border-radius: 4px;
-						font-family: sans-serif;
-						margin: 10px;
-					"
-				>
-					Оберіть файл
-				</label>
-				<span id="file-name" style="margin-left: 10px;">Файл не вибрано</span>
+				<div class="container" style="display: flex; flex-direction: row">
+					<label
+						for="pkFile"
+						style="
+							display: flex;
+							width: 120px;
+							padding: 5px 12px;
+							cursor: pointer;
+							background-color: #007bff;
+							color: white;
+							border-radius: 4px;
+							font-family: sans-serif;
+							margin: 10px;
+						"
+					>
+						Оберіть файл
+					</label>
+					<span id="file-name" style="margin-left: 10px">Файл не вибрано</span>
+				</div>
+
 				<input
 					id="pkFile"
 					type="file"
@@ -145,22 +148,25 @@
 			<br />
 			<div id="signBlock" style="display: flex; flex-direction: column">
 				<label for="dataFile">Оберіть файл для підпису:</label>
-				<label
-					for="dataFile"
-					style="
-						display: flex;
-						width: 120px;
-						padding: 5px 12px;
-						cursor: pointer;
-						background-color: #007bff;
-						color: white;
-						border-radius: 4px;
-						font-family: sans-serif;
-						margin: 10px;
-					"
-					>Оберіть файл</label
-				>
-				<span id="file-name" style="margin-left: 10px;">Файл не вибрано</span>
+				<div class="container" style="display: flex; flex-direction: row">
+					<label
+						for="dataFile"
+						style="
+							display: flex;
+							width: 120px;
+							padding: 5px 12px;
+							cursor: pointer;
+							background-color: #007bff;
+							color: white;
+							border-radius: 4px;
+							font-family: sans-serif;
+							margin: 10px;
+						"
+						>Оберіть файл</label
+					>
+					<span id="file-name" style="margin-left: 10px">Файл не вибрано</span>
+				</div>
+
 				<input id="dataFile" type="file" style="display: none" />
 				<label for="envelopedOrigin">
 					Додавати оригінал у підписану сигнатуру:
