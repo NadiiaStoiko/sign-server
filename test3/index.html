@@ -74,18 +74,20 @@
 			</div>
 			<br />
 			<br />
-			<div id="pkFileBlock" style="display: block">
+			<div id="pkFileBlock" style="display: flex; flex-direction: column">
 				<label>Файл з особистим ключем:</label>
 				<label
 					for="pkFile"
 					style="
-						display: inline-block;
-						padding: 6px 12px;
+						display: flex;
+						width: 120px;
+						padding: 5px 12px;
 						cursor: pointer;
 						background-color: #007bff;
 						color: white;
 						border-radius: 4px;
 						font-family: sans-serif;
+						margin: 10px;
 					"
 				>
 					Оберіть файл
@@ -96,8 +98,12 @@
 					style="margin-left: 15px; margin-bottom: 15px; display: none"
 				/>
 				<label for="pkFilePassword">Пароль:</label>
-				<br /><br />
-				<input id="pkFilePassword" type="password" value="" />
+				<input
+					id="pkFilePassword"
+					type="password"
+					value=""
+					style="margin: 10px"
+				/>
 				<br /><br />
 				<!-- <p style="color: darkorange; font-size: 20px; max-width: 50%">
 					Щоб накласти другий підпис, після успішного першого підпису, виберіть
@@ -136,19 +142,20 @@
 				</div>
 			</div>
 			<br />
-			<div id="signBlock" style="display: block">
+			<div id="signBlock" style="display: flex; flex-direction: column">
 				<label for="dataFile">Оберіть файл для підпису:</label>
 				<label
 					for="dataFile"
-					class="custom-file-upload"
 					style="
-						display: inline-block;
-						padding: 6px 12px;
+						display: flex;
+						width: 120px;
+						padding: 5px 12px;
 						cursor: pointer;
 						background-color: #007bff;
 						color: white;
 						border-radius: 4px;
 						font-family: sans-serif;
+						margin: 10px;
 					"
 					>Оберіть файл</label
 				>
