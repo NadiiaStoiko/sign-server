@@ -124,20 +124,22 @@
 			<br />
 			<div id="signBlock" style="display: block">
 				<label for="taFile">Оберіть файл для підпису:</label>
-				<!-- <select id="selectWhatToSign">
-					<option selected="" value="text">Текст</option>
-					<option value="file">Файл</option>
-				</select>
-				<br /> -->
-
-				<!-- <textarea
-					id="dataText"
-					style="width: 350px; height: 100px; overflow: scroll; display: block"
-				>
-тестовий текст для підпису</textarea
-				> -->
 				<!-- <input id="dataFile" type="file" style="display: none" /> -->
-				<input id="dataFile" type="file" style="display: block" />
+				<label
+					for="dataFile"
+					class="custom-file-upload"
+					style="
+						display: inline-block;
+						padding: 6px 12px;
+						cursor: pointer;
+						background-color: #007bff;
+						color: white;
+						border-radius: 4px;
+						font-family: sans-serif;
+					"
+					>Оберіть файл</label
+				>
+				<input id="dataFile" type="file" style="display: none" />
 
 				<label for="envelopedOrigin">
 					Додавати оригінал у підписану сигнатуру:
