@@ -48,6 +48,10 @@
 				stroke-linecap: round;
 				animation: dash 1.5s ease-in-out infinite;
 			}
+
+			#pkFilePassword:hover {
+				outline: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -81,8 +85,8 @@
 						for="pkFile"
 						style="
 							display: flex;
-							width: 120px;
-							padding: 5px 12px;
+							width: 100px;
+							padding: 7px 16px;
 							cursor: pointer;
 							background-color: #006eef;
 							color: white;
@@ -109,7 +113,13 @@
 					id="pkFilePassword"
 					type="password"
 					value=""
-					style="margin: 10px"
+					style="
+						margin: 10px;
+						border: 1px #006eef solid;
+						height: 27px;
+						border-radius: 9px;
+						outline: none;
+					"
 				/>
 				<br />
 				<!-- <p style="color: darkorange; font-size: 20px; max-width: 50%">
@@ -196,7 +206,7 @@
 					id="sign-button"
 					style="
 						width: 140px;
-						padding: 5px 12px;
+						padding: 9px 125px;
 						cursor: pointer;
 						background-color: #006eef;
 						color: white;
