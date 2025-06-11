@@ -1,4 +1,5 @@
 let signError = ''
+let fileForSign
 let isDocumentSignedSuccess = false
 const PK_FORM_TYPE_FILE = 1,
 	PK_FORM_TYPE_KM = 2,
@@ -21,8 +22,10 @@ var euSignFile = new EndUser(null, EndUserConstants.EndUserLibraryType.JS),
 	formType = PK_FORM_TYPE_FILE
 
 window.addEventListener('message', event => {
+	console.log('event', event)
 	// if (event.origin !== 'https://your-parent-origin.com') return // Validate origin
-	console.log('Data received:', event.data)
+	fileForSign = event.data.file
+	console.log('fileForSign:', fileForSign)
 })
 
 function readFile(e) {
@@ -92,13 +95,13 @@ function setLibraryType(e) {
 	var n = document.getElementById('pkFileBlock'),
 		t = document.getElementById('pkKeyMediaBlock'),
 		i = document.getElementById('pkKSPBlock'),
-		a = document.getElementById('signBlock'),
-		// l = document.getElementById('dataText'),
-		o = document.getElementById('dataFile')
+		a = document.getElementById('signBlock')
+	// l = document.getElementById('dataText'),
+	// o = document.getElementById('dataFile')
 	switch (
 		// (l.style.display = 'block'),
-		((o.style.display = 'none'),
-		(n.style.display = 'none'),
+		// (o.style.display = 'none'),
+		((n.style.display = 'none'),
 		(t.style.display = 'none'),
 		(i.style.display = 'none'),
 		(a.style.display = 'none'),
@@ -334,7 +337,8 @@ function signData() {
 	;(n = 'text' === 'file'),
 		(t = ''),
 		// t = document.getElementById('dataText'),
-		(i = document.getElementById('dataFile')),
+		// (i = document.getElementById('dataFile')),
+		(i = fileForSign),
 		(a = document.getElementById('pkDetails')),
 		(l = document.getElementById('sign-button')),
 		(o = document.getElementById('spinner'))
@@ -532,14 +536,14 @@ window.onload = function () {
 				},
 				!1
 			),
-			document
-				.getElementById('dataFile')
-				.addEventListener('change', function () {
-					const fileName = this.files[0]
-						? this.files[0].name
-						: 'Файл не вибрано'
-					document.getElementById('dataFile-file-name').textContent = fileName
-				}),
+			// document
+			// 	.getElementById('dataFile')
+			// 	.addEventListener('change', function () {
+			// 		const fileName = this.files[0]
+			// 			? this.files[0].name
+			// 			: 'Файл не вибрано'
+			// 		document.getElementById('dataFile-file-name').textContent = fileName
+			// 	}),
 			document.getElementById('pkFile').addEventListener('change', function () {
 				const fileName = this.files[0] ? this.files[0].name : 'Файл не вибрано'
 				document.getElementById('file-name').textContent = fileName
