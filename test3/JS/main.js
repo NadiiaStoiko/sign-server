@@ -349,8 +349,9 @@ function signData() {
 		n
 			? _signData(t.value, e)
 			: (console.log(i),
-			  console.log(i.files[0]),
-			  readFile(i.files[0])
+			  // console.log(i.files[0]),
+			  // readFile(i.files[0])
+			  readFile(i)
 					.then(({ data: n }) => _signData(n, e))
 					.catch(e => {
 						;(o.style.display = 'none'), (l.disabled = !1)
