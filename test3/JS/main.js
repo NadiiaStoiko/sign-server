@@ -13,12 +13,18 @@ var euSettings = {
 	allowedKeyMediaTypes: [],
 	KSPs: [],
 }
-console.log('CAs', euSettings.CAs)
+
 var euSignFile = new EndUser(null, EndUserConstants.EndUserLibraryType.JS),
 	euSignKeyMedia = new EndUser(null, EndUserConstants.EndUserLibraryType.SW),
 	keyMedias = [],
 	euSign = euSignFile,
 	formType = PK_FORM_TYPE_FILE
+
+window.addEventListener('message', event => {
+	// if (event.origin !== 'https://your-parent-origin.com') return // Validate origin
+	console.log('Data received:', event.data)
+})
+
 function readFile(e) {
 	return new Promise(function (n, t) {
 		var i = new FileReader()
