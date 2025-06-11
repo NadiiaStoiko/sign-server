@@ -67,14 +67,22 @@
 				</h3> -->
 			</div>
 
-			<div>
+			<div style="display: flex; flex-direction: column">
 				<p>Оберіть тип носія особистого ключа</p>
-				<input type="radio" id="pkTypeFile" name="pkType" checked="" />
-				<label for="pkTypeFile">Файловий носій</label>
-				<input type="radio" id="pkTypeKeyMedia" name="pkType" />
-				<label for="pkTypeKeyMedia">Захищений носій</label>
-				<input type="radio" id="pkTypeKSP" name="pkType" />
-				<label for="pkTypeKSP">Носій у складі сервісу</label>
+				<div style="display: flex"></div>>
+					<label for="pkTypeFile">Файловий носій</label>
+					<input type="radio" id="pkTypeFile" name="pkType" checked="" />
+				</div>
+
+				<div style="display: flex">
+					<label for="pkTypeKeyMedia">Захищений носій</label>
+					<input type="radio" id="pkTypeKeyMedia" name="pkType" />
+				</div>
+
+				<div style="display: flex">
+					<label for="pkTypeKSP">Носій у складі сервісу</label>
+					<input type="radio" id="pkTypeKSP" name="pkType" />
+				</div>
 			</div>
 			<br />
 			<br />
