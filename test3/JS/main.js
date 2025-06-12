@@ -31,7 +31,7 @@ fetch('../Data/ksps.json')
 		console.log('Завантажено JSON:', jsonData)
 		let cloudSelect = document.getElementById('pkKSPSelect')
 		jsonData.map(item => {
-			let option = document.createElement(option)
+			let option = document.createElement('option')
 			option.textContent = item.name
 			cloudSelect.appendChild(option)
 		})
