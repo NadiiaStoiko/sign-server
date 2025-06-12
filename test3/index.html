@@ -89,9 +89,7 @@
 				outline: none;
 				box-shadow: 0 0 3px rgba(74, 144, 226, 0.5);
 			}
-			#pkTypeFile,
-			#pkTypeKeyMedia,
-			#pkTypeKSP {
+			.keyType {
 				margin-top: 13px;
 			}
 		</style>
@@ -113,17 +111,17 @@
 				<p>Оберіть тип носія особистого ключа</p>
 				<div style="display: flex">
 					<input type="radio" id="pkTypeFile" name="pkType" checked="" />
-					<label for="pkTypeFile">Файловий носій</label>
+					<label class="keyType" for="pkTypeFile">Файловий носій</label>
 				</div>
 
 				<div style="display: flex">
 					<input type="radio" id="pkTypeKeyMedia" name="pkType" />
-					<label for="pkTypeKeyMedia">Захищений носій</label>
+					<label class="keyType" for="pkTypeKeyMedia">Захищений носій</label>
 				</div>
 
 				<div style="display: flex">
 					<input type="radio" id="pkTypeKSP" name="pkType" />
-					<label for="pkTypeKSP">Носій у складі сервісу</label>
+					<label class="keyType" for="pkTypeKSP">Носій у складі сервісу</label>
 				</div>
 			</div>
 			<br />
