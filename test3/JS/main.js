@@ -1,5 +1,6 @@
 let signError = ''
 let fileForSign
+let list = []
 let isDocumentSignedSuccess = false
 const PK_FORM_TYPE_FILE = 1,
 	PK_FORM_TYPE_KM = 2,
@@ -29,15 +30,17 @@ fetch('../Data/ksps.json')
 	})
 	.then(jsonData => {
 		console.log('Завантажено JSON:', jsonData)
-		jsonData.forEach(item => {
-			let option = document.createElement('option')
-			console.log('option', option)
-			option.textContent = item.name
-			console.log('optionN', option)
-			let cloudSelect = document.getElementById('pkKSPSelect')
-			cloudSelect.appendChild(option)
-			console.log('cloudSelect', document.getElementById('pkKSPSelect'))
-		})
+		euSettings.KSPs = [...jsonData]
+		// console.log('list:', list)
+		// jsonData.forEach(item => {
+		// 	let option = document.createElement('option')
+		// 	console.log('option', option)
+		// 	option.textContent = item.name
+		// 	console.log('optionN', option)
+		// 	let cloudSelect = document.getElementById('pkKSPSelect')
+		// 	cloudSelect.appendChild(option)
+		// 	console.log('cloudSelect', document.getElementById('pkKSPSelect'))
+		// })
 	})
 	.catch(error => {
 		console.error('Помилка при завантаженні JSON:', error)
