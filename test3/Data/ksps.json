@@ -1,0 +1,249 @@
+[
+	{
+		"name": "ІІТ - хмарний підпис (2)",
+		"ksp": 6,
+		"address": "https://sserver2.iit.com.ua",
+		"port": "443",
+		"clientIdPrefix": "",
+		"clientIdType": 1
+	},
+	{
+		"name": "DepositSign - хмарний підпис",
+		"ksp": 6,
+		"address": "https://depositsign.com/api/v1/informjust/sign-server",
+		"port": "",
+		"clientIdPrefix": "",
+		"directAccess": true
+	},
+	{
+		"name": "Сервер підпису \"КНЕДП ДПС\"",
+		"ksp": 6,
+		"address": "http://smart-sign.tax.gov.ua/",
+		"port": "80",
+		"directAccess": true,
+		"clientIdType": 1,
+		"clientIdPrefix": ""
+	},
+	{
+		"name": "Приватбанк - хмарний підпис \"SmartID\"",
+		"ksp": 6,
+		"address": "https://acsk.privatbank.ua/cloud/api/back/",
+		"port": "",
+		"directAccess": true,
+		"clientIdPrefix": "IIT_",
+		"confirmationURL": "https://www.privat24.ua/rd/kep",
+		"mobileAppName": "Приват24"
+	},
+	{
+		"name": "Фоззі Груп - хмарний підпис",
+		"ksp": 6,
+		"address": "https://skey.fozzy.ua",
+		"port": "443",
+		"clientIdPrefix": "",
+		"directAccess": true
+	},
+	{
+		"name": "Хмарний підпис АТ «АЛЬФА-БАНК»",
+		"ksp": 6,
+		"address": "https://microservice.alfabank.kiev.ua/sign-server/",
+		"port": "",
+		"clientIdPrefix": "",
+		"directAccess": true,
+		"pollingInterval": 5
+	},
+	{
+		"name": "Вчасно - хмарний підпис",
+		"ksp": 6,
+		"address": "https://cs.vchasno.ua/ss/",
+		"port": "",
+		"clientIdPrefix": "",
+		"directAccess": true
+	},
+	{
+		"name": "Вчасно - хмарний підпис (QR)",
+		"ksp": 6,
+		"address": "https://cs.vchasno.ua/ss/",
+		"port": "",
+		"directAccess": true,
+		"clientIdPrefix": "IIT_",
+		"confirmationURL": "https://cs.vchasno.ua/rd/",
+		"mobileAppName": "Вчасно.КЕП"
+	},
+	{
+		"name": "eSign - хмарний підпис",
+		"ksp": 6,
+		"address": "https://cabinet.e-life.com.ua/api/EDG/Sign",
+		"port": "",
+		"clientIdPrefix": "",
+		"directAccess": true
+	},
+	{
+		"name": "ТОВ «ЦСК «Україна» - хмарний підпис CloudKey",
+		"ksp": 6,
+		"address": "https://sid.uakey.com.ua/smartid/iit/",
+		"port": "",
+		"directAccess": true,
+		"clientIdPrefix": "IIT_",
+		"confirmationURL": "https://sid.uakey.com.ua/kep",
+		"mobileAppName": "CloudKey"
+	},
+	{
+		"name": "ПУМБ - хмарний підпис",
+		"ksp": 6,
+		"address": "https://apiext.pumb.ua/hogsmeade/striga/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "DIIA_3",
+		"confirmationURL": "https://www.pumb.ua/qes",
+		"mobileAppName": ""
+	},
+	{
+		"name": "Укргазбанк - хмарний підпис",
+		"ksp": 6,
+		"address": "https://vtms-api-qca.ukrgasbank.com/iit-signer/api/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "UGB_PROD",
+		"confirmationURL": "https://cihsm-commiter-qca.ukrgasbank.com",
+		"mobileAppName": ""
+	},
+	{
+		"name": "Банк Альянс - хмарний підпис",
+		"ksp": 6,
+		"address": "https://cihsm-api.bankalliance.ua/iit-signer/api/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "ALLIANCE_PROD",
+		"confirmationURL": "https://cihsm-commiter.bankalliance.ua",
+		"mobileAppName": ""
+	},
+	{
+		"name": "Інфотех - хмарний підпис",
+		"ksp": 6,
+		"address": "https://cihsm-api.infotech.gov.ua/iit-signer/api/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "INFOTECH_CORP_PROD",
+		"confirmationURL": "https://cihsm-commiter-ca.infotech.gov.ua",
+		"mobileAppName": ""
+	},
+	{
+		"name": "АМО ФІНТЕХ – хмарний підпис AMOKEY",
+		"ksp": 6,
+		"address": "https://sserver.amokey.com",
+		"port": "443",
+		"clientIdPrefix": "",
+		"directAccess": true,
+		"codeEDRPOU": "44669502"
+	},
+	{
+		"name": "КНЕДП УСС - сервер підпису КП ГІОЦ",
+		"ksp": 6,
+		"address": "https://smartkey.kyivcity.gov.ua",
+		"port": "443",
+		"clientIdPrefix": "",
+		"directAccess": true,
+		"codeEDRPOU": "04013755"
+	},
+	{
+		"name": "Ощадбанк - хмарний підпис",
+		"ksp": 6,
+		"address": "https://cihsm-api.oschadbank.ua/iit-signer/api/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "OSCHADBANK_PROD",
+		"confirmationURL": "https://cihsm-commiter.oschadbank.ua",
+		"mobileAppName": "BC.C SmartID"
+	},
+	{
+		"name": "Ощадбанк - хмарний підпис (Mobile Approval)",
+		"ksp": 6,
+		"address": "https://cihsm-api.oschadbank.ua/iit-signer/api/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "OSCHADBANK_MOBILE_PROD",
+		"confirmationURL": "https://smartid.oschadbank.ua/widgetidua/  ",
+		"mobileAppName": "BC.C SmartID"
+	},
+	{
+		"name": "Фоззі Груп - хмарний підпис (тестування)",
+		"ksp": 6,
+		"address": "https://skey-test.fozzy.ua",
+		"port": "443",
+		"clientIdPrefix": "",
+		"directAccess": true
+	},
+	{
+		"name": "Сервер підпису \"КНЕДП Дія\" (тестування)",
+		"ksp": 6,
+		"address": "https://ssign.diia.gov.ua",
+		"port": "443",
+		"clientIdPrefix": "",
+		"directAccess": true
+	},
+	{
+		"name": "Вчасно - хмарний підпис (тестування)",
+		"ksp": 6,
+		"address": "https://cs.vchasno.stg.evo/ss/",
+		"port": "",
+		"clientIdPrefix": "",
+		"directAccess": true
+	},
+	{
+		"name": "Вчасно - хмарний підпис (тестування QR)",
+		"ksp": 6,
+		"address": "https://cs.vchasno.stg.evo/ss/",
+		"port": "",
+		"directAccess": true,
+		"clientIdPrefix": "IIT_",
+		"confirmationURL": "https://cs.vchasno.stg.evo/rd/kep",
+		"mobileAppName": "Вчасно.КЕП"
+	},
+	{
+		"name": "АТ \"Укртранснафта\" - хмарний підпис (тестування)",
+		"ksp": 6,
+		"address": "https://kepserver.ukrtransnafta.com",
+		"port": "444",
+		"directAccess": false,
+		"clientIdPrefix": "",
+		"clientIdType": 1
+	},
+	{
+		"name": "Тестовий сервер підпису \"КНЕДП Дія\"",
+		"ksp": 6,
+		"address": "https://test2-ssign.diia.org.ua",
+		"port": "443",
+		"clientIdPrefix": "",
+		"directAccess": true
+	},
+	{
+		"name": "Сайфер - хмарний підпис (тестування QR)",
+		"ksp": 6,
+		"address": "https://cihsm-dev-api.cipher.com.ua/iit-signer/api/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "CIPHER_TEST_",
+		"confirmationURL": "https://iit-signer-commiter-dev.cipher.com.ua",
+		"mobileAppName": ""
+	},
+	{
+		"name": "Укргазбанк - хмарний підпис (тестування)",
+		"ksp": 6,
+		"address": "https://vtms-api-csk.ukrgasbank.com/iit-signer/api/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "UGB_TEST_",
+		"confirmationURL": "https://cihsm-commiter-csk.ukrgasbank.com",
+		"mobileAppName": ""
+	},
+	{
+		"name": "ОГП - хмарний підпис (тестування QR)",
+		"ksp": 6,
+		"address": "https://cihsm-api.gp.gov.ua/iit-signer/api/v1",
+		"port": "",
+		"directAccess": false,
+		"clientIdPrefix": "OGP_PROD",
+		"confirmationURL": "https://cihsm-commiter.gp.gov.ua",
+		"mobileAppName": ""
+	}
+]
