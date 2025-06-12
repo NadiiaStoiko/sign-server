@@ -29,14 +29,14 @@ fetch('../Data/ksps.json')
 	})
 	.then(jsonData => {
 		console.log('Завантажено JSON:', jsonData)
-		let cloudSelect = document.getElementById('pkKSPSelect')
-		console.log('cloudSelect', cloudSelect)
 		jsonData.forEach(item => {
 			let option = document.createElement('option')
 			console.log('option', option)
 			option.textContent = item.name
 			console.log('optionN', option)
+			let cloudSelect = document.getElementById('pkKSPSelect')
 			cloudSelect.appendChild(option)
+			console.log('cloudSelect', document.getElementById('pkKSPSelect'))
 		})
 	})
 	.catch(error => {
