@@ -49,13 +49,22 @@
 				animation: dash 1.5s ease-in-out infinite;
 			}
 
-			#pkFilePassword:hover,
-			#pkKeyMediaPassword:hover {
+			input {
+				margin: 10px;
+				background-color: white;
+				border: 1px solid #ccc;
+				height: 27px;
+				border-radius: 4px;
+				outline: none;
+			}
+
+			input:hover,
+			input:focus {
 				outline: none;
 				border-color: #4a90e2;
-				outline: none;
 				box-shadow: 0 0 3px rgba(74, 144, 226, 0.5);
 			}
+
 			select {
 				appearance: none; /* Забирає стрілку (для Safari і Firefox) */
 				-webkit-appearance: none; /* Забирає стрілку (для Chrome) */
@@ -75,9 +84,7 @@
 				padding-right: 30px;
 			}
 
-			select:focus,
-			#pkFilePassword:focus,
-			#pkKeyMediaPassword:focus {
+			select:focus {
 				border-color: #4a90e2;
 				outline: none;
 				box-shadow: 0 0 3px rgba(74, 144, 226, 0.5);
@@ -147,19 +154,7 @@
 					style="margin-left: 15px; margin-bottom: 15px; display: none"
 				/>
 				<label for="pkFilePassword">Пароль:</label>
-				<input
-					id="pkFilePassword"
-					type="password"
-					value=""
-					style="
-						margin: 10px;
-						background-color: white;
-						border: 1px solid #ccc;
-						height: 27px;
-						border-radius: 4px;
-						outline: none;
-					"
-				/>
+				<input id="pkFilePassword" type="password" value="" />
 				<br />
 				<!-- <p style="color: darkorange; font-size: 20px; max-width: 50%">
 					Щоб накласти другий підпис, після успішного першого підпису, виберіть
@@ -179,18 +174,7 @@
 				<br />
 				<label>Пароль:</label>
 				<br />
-				<input
-					id="pkKeyMediaPassword"
-					type="password"
-					style="
-						margin: 10px;
-						background-color: white;
-						border: 1px solid #ccc;
-						height: 27px;
-						border-radius: 4px;
-						outline: none;
-					"
-				/>
+				<input id="pkKeyMediaPassword" type="password" />
 			</div>
 			<div id="pkKSPBlock" style="display: none">
 				<label>Тип сервісу підпису:</label>
