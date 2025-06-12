@@ -49,8 +49,33 @@
 				animation: dash 1.5s ease-in-out infinite;
 			}
 
-			#pkFilePassword:hover {
+			#pkFilePassword:hover,
+			#pkKeyMediaPassword:hover {
 				outline: none;
+			}
+			select {
+				appearance: none; /* Забирає стрілку (для Safari і Firefox) */
+				-webkit-appearance: none; /* Забирає стрілку (для Chrome) */
+				-moz-appearance: none;
+
+				background-color: white;
+				border: 1px solid #ccc;
+				padding: 8px 12px;
+				font-size: 16px;
+				border-radius: 4px;
+				width: 200px;
+
+				background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+				background-repeat: no-repeat;
+				background-position: right 10px center;
+				background-size: 16px 16px;
+				padding-right: 30px;
+			}
+
+			select:focus {
+				border-color: #4a90e2;
+				outline: none;
+				box-shadow: 0 0 3px rgba(74, 144, 226, 0.5);
 			}
 		</style>
 	</head>
@@ -148,7 +173,17 @@
 				<br />
 				<label>Пароль:</label>
 				<br />
-				<input id="pkKeyMediaPassword" type="password" />
+				<input
+					id="pkKeyMediaPassword"
+					type="password"
+					style="
+						margin: 10px;
+						border: 1px #006eef solid;
+						height: 27px;
+						border-radius: 9px;
+						outline: none;
+					"
+				/>
 			</div>
 			<div id="pkKSPBlock" style="display: none">
 				<label>Тип сервісу підпису:</label>
