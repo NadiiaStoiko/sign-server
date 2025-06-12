@@ -22,7 +22,7 @@ var euSignFile = new EndUser(null, EndUserConstants.EndUserLibraryType.JS),
 	euSign = euSignFile,
 	formType = PK_FORM_TYPE_FILE
 
-// get list for cloud
+// get KSPs
 fetch('../Data/ksps.json')
 	.then(response => {
 		if (!response.ok) throw new Error('HTTP error ' + response.status)
@@ -31,16 +31,20 @@ fetch('../Data/ksps.json')
 	.then(jsonData => {
 		console.log('Завантажено JSON:', jsonData)
 		euSettings.KSPs = [...jsonData]
-		// console.log('list:', list)
-		// jsonData.forEach(item => {
-		// 	let option = document.createElement('option')
-		// 	console.log('option', option)
-		// 	option.textContent = item.name
-		// 	console.log('optionN', option)
-		// 	let cloudSelect = document.getElementById('pkKSPSelect')
-		// 	cloudSelect.appendChild(option)
-		// 	console.log('cloudSelect', document.getElementById('pkKSPSelect'))
-		// })
+	})
+	.catch(error => {
+		console.error('Помилка при завантаженні JSON:', error)
+	})
+
+// get allowedKeyMediaTypes
+fetch('../Data/allowedKeyMediaTypes.json')
+	.then(response => {
+		if (!response.ok) throw new Error('HTTP error ' + response.status)
+		return response.json()
+	})
+	.then(jsonData => {
+		console.log('Завантажено JSON:', jsonData)
+		euSettings.allowedKeyMediaTypes = [...jsonData]
 	})
 	.catch(error => {
 		console.error('Помилка при завантаженні JSON:', error)
