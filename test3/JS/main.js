@@ -20,7 +20,7 @@ var euSignFile = new EndUser(null, EndUserConstants.EndUserLibraryType.JS),
 	keyMedias = [],
 	euSign = euSignFile,
 	formType = PK_FORM_TYPE_FILE
-	
+
 // get list for cloud
 fetch('../Data/ksps.json')
 	.then(response => {
@@ -29,7 +29,12 @@ fetch('../Data/ksps.json')
 	})
 	.then(jsonData => {
 		console.log('Завантажено JSON:', jsonData)
-		// приклад доступу: jsonData[0].IssuerCN
+		let cloudSelect = document.getElementById('pkKSPSelect')
+		jsonData.map(item => {
+			let option = document.createElement(option)
+			option.textContent = item.name
+			cloudSelect.appendChild(option)
+		})
 	})
 	.catch(error => {
 		console.error('Помилка при завантаженні JSON:', error)
